@@ -31,16 +31,16 @@ sudo ./deploy.sh
 
 Stop test.service:
 
-systemctl stop test.service
+sudo systemctl stop test.service
 
 Restart test.service:
 
-systemctl restart test.service
+sudo systemctl restart test.service
 
 Read log file:
 
 ### Last 5 line ###
-cat /var/log/monitoring_service.log | tile -n 5 
+cat /var/log/monitoring_service.log | tail -n 5 
 
 ### All ###
 cat /var/log/monitoring_service.log
