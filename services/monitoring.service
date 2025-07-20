@@ -1,0 +1,9 @@
+[Unit]
+Description=Write log every minute
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/monitoring.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for loging every minute
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+Unit=monitoring_test.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
