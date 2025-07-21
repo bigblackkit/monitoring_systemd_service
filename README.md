@@ -1,0 +1,52 @@
+Task:
+
+Write a bash script to monitor the test process in a Linux environment.
+The script must meet the following requirements:
+1 Run at system startup (it is preferable to write a systemd unit in addition to the script)
+2 Run every minute
+3 If the process is running, then knock (via https) on
+https://test.com/monitoring/test/api
+4 If the process has been restarted, write to the log /var/log/monitoring.log
+(if the process is not running, then do nothing)
+5 If the monitoring server is unavailable, also write to the log.
+
+
+Hierarchy:
+
+monitoring_systemd_service/
+├── deploy.sh - deploy servises
+├── undeployment.sh - undeploy servises
+├── readmy.txt
+├── scripts
+│   ├── monitoring.sh - Monitoring script
+│   └── test_service.sh - Infinite loop for service
+└── services
+    ├── monitoring.service - Monitoring service
+    ├── monitoring.timer - Monitoring timer for Monitoring service
+    └── test.service - Test service
+
+Deployment of services:
+
+chmod +x deploy.sh
+sudo ./deploy.sh
+
+Stop test.service:
+
+sudo systemctl stop test.service
+
+Restart test.service:
+
+sudo systemctl restart test.service
+
+Read log file:
+
+### Last 5 line ###
+cat /var/log/monitoring_service.log | tail -n 5 
+
+### All ###
+cat /var/log/monitoring_service.log
+
+Uneployment of services:
+
+chmod +x undeployment.sh
+sudo ./undeployment.sh
