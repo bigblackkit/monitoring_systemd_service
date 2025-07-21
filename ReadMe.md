@@ -6,7 +6,6 @@ This repository contains a bash script and systemd service to monitor a test pro
 
 ## Table of Contents / Содержание
 - [Русская версия](#русская-версия)
-  - [Обзор](#обзор)
   - [Требования](#требования)
   - [Структура директорий](#структура-директорий)
   - [Развертывание](#развертывание)
@@ -14,7 +13,6 @@ This repository contains a bash script and systemd service to monitor a test pro
   - [Просмотр логов](#просмотр-логов)
   - [Удаление служб](#удаление-служб)
 - [English Version](#english-version)
-  - [Overview](#overview)
   - [Requirements](#requirements)
   - [Directory Structure](#directory-structure)
   - [Deployment](#deployment)
@@ -23,16 +21,6 @@ This repository contains a bash script and systemd service to monitor a test pro
   - [Undeployment](#undeployment)
 
 ## Русская версия
-
-### Обзор
-Система мониторинга предназначена для:
-- Запуска при старте системы с использованием systemd.
-- Выполнения каждую минуту для проверки тестового процесса.
-- Отправки HTTP-запроса на `https://test.com/monitoring/test/api`, если процесс активен.
-- Записи перезапусков процесса в лог `/var/log/monitoring.log`.
-- Записи в лог, если сервер мониторинга недоступен.
-- Ничего не делать, если процесс не запущен.
-
 ### Требования
 Скрипт мониторинга должен:
 1. Запускаться автоматически при загрузке системы (через systemd).
@@ -94,15 +82,6 @@ sudo ./undeployment.sh
 ```
 
 ## English Version
-
-### Overview
-The monitoring system is designed to:
-- Run at system startup using a systemd unit.
-- Execute every minute to check the test process.
-- Send an HTTP request to `https://test.com/monitoring/test/api` if the process is running.
-- Log process restarts and monitoring server unavailability to `/var/log/monitoring.log`.
-- Take no action if the process is not running.
-
 ### Requirements
 The monitoring script must:
 1. Start automatically at system boot (via systemd).
