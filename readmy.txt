@@ -45,3 +45,8 @@ cat /var/log/monitoring_service.log | tail -n 5
 
 ### All ###
 cat /var/log/monitoring_service.log
+
+Uneployment of services:
+
+chmod +x undeployment.sh
+sudo ./undeployment.sh
