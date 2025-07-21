@@ -22,7 +22,7 @@ monitoring_systemd_service/
 └── services
     ├── monitoring.service - Monitoring service
     ├── monitoring.timer - Monitoring timer for Monitoring service
-    └── test.service - Monitoring service
+    └── test.service - Test service
 
 Deployment of services:
 
