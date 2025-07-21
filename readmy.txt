@@ -15,6 +15,7 @@ Hierarchy:
 
 monitoring_systemd_service/
 ├── deploy.sh - deploy servises
+├── undeployment.sh - undeploy servises
 ├── readmy.txt
 ├── scripts
 │   ├── monitoring.sh - Monitoring script
